@@ -1,0 +1,59 @@
+:root {
+  --kasu-green: #009030;
+  --kasu-dark: #006B24;
+  --kasu-light: #E8F5EC;
+  --kasu-red: #D02010;
+  --kasu-gold: #F0C800;
+  --ink: #202020;
+}
+
+body { font-family: 'Segoe UI', Tahoma, sans-serif; color: var(--ink); }
+
+.auth-wrap { min-height: 100vh; display: flex; }
+
+.brand-panel {
+  flex: 1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; color: #fff; padding: 2rem;
+  background-color: var(--kasu-dark);
+  background-image:
+    linear-gradient(160deg, rgba(0,107,36,.93), rgba(0,144,48,.85)),
+    url('/images/campus-bg.jpg');
+  background-size: cover; background-position: center;
+}
+
+.logo-badge {
+  background: #fff; border-radius: 50%;
+  padding: 14px; width: 170px; height: 170px;
+  border: 5px solid var(--kasu-gold);
+  box-shadow: 0 8px 24px rgba(0,0,0,.3);
+}
+.logo-badge img { width: 100%; height: 100%; object-fit: contain; }
+
+.brand-panel h1 { font-weight: 800; letter-spacing: 1px; margin-top: 1.5rem; }
+.brand-panel .tagline { color: var(--kasu-gold); font-weight: 600; font-size: 1.15rem; }
+.brand-panel .motto { opacity: .85; font-style: italic; margin-top: 1rem; }
+
+.form-panel {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  background: var(--kasu-light); padding: 2rem;
+}
+
+.auth-card {
+  background: #fff; width: 100%; max-width: 460px;
+  border-radius: 14px; border-top: 6px solid var(--kasu-gold);
+  box-shadow: 0 10px 30px rgba(0,0,0,.12); padding: 2rem;
+}
+.auth-card h2 { color: var(--kasu-dark); font-weight: 700; }
+
+.btn-kasu { background: var(--kasu-green); color: #fff; border: none; font-weight: 600; }
+.btn-kasu:hover { background: var(--kasu-dark); color: #fff; }
+
+.auth-card a { color: var(--kasu-green); font-weight: 600; }
+
+@media (max-width: 900px) {
+  .auth-wrap { flex-direction: column; }
+  .brand-panel { padding: 2rem 1rem; }
+  .logo-badge { width: 120px; height: 120px; }
+}
