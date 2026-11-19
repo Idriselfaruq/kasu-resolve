@@ -44,12 +44,24 @@ if (loginForm) {
       if (ok) {
         localStorage.setItem('token', result.token);
         localStorage.setItem('user', JSON.stringify(result.user));
-        window.location.href = '/dashboard.html';
+        if (result.user.role === 'admin') {
+          window.location.href = '/admin.html';
+        } else {
+          window.location.href = '/dashboard.html';
+        }
       } else {
         showMessage(result.error, 'danger');
       }
     } catch (err) {
       showMessage('Could not reach the server. Is it running?', 'danger');
     }
+  });
+}
+
+const showBox = document.getElementById('showPassword');
+if (showBox) {
+  showBox.addEventListener('change', () => {
+    const field = document.querySelector('input[name="password"]');
+    field.type = showBox.checked ? 'text' : 'password';
   });
 }
